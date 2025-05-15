@@ -1,8 +1,8 @@
 with source as (
-   select * from {{ source('deel', 'acceptance') }}
+   select * FROM {{ source('globepay','ACCEPTANCE') }}
 )
-SELECT
-   *,
+SELECT external_ref,status,source,ref,date_time,state,cvv_provided,amount,currency,
+
    CASE
        WHEN currency = 'USD' THEN amount
        WHEN currency = 'CAD' THEN amount / 1.1415

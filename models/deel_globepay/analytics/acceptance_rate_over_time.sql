@@ -17,4 +17,4 @@ GROUP BY
  DATE_PART('month', TO_TIMESTAMP(DATE_TIME)),
  DATE_PART('hour', TO_TIMESTAMP(DATE_TIME))
 ORDER BY
- date, hour;
+ date, hour

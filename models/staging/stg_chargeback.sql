@@ -1,5 +1,5 @@
 with source as (
-   select * from {{ source('deel', 'chargeback') }}
+   select * from {{ source('globepay','CHARGEBACK')}}
 )
 select
    external_ref,
