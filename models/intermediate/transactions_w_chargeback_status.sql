@@ -19,7 +19,7 @@ SELECT
    a.currency,
    a.usd_rate,
    a.amount_usd,
-   -- Since chargeback_date does not exist, explicitly setting it as NULL
+   -- Since chargeback_date does not exist, I opted explicitly setting it as NULL
    NULL AS chargeback_date,
    -- Determine if chargeback is missing by whether the left join failed
    CASE

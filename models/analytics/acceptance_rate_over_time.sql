@@ -1,0 +1,20 @@
+SELECT
+ TO_DATE(TO_TIMESTAMP(DATE_TIME)) AS date,
+ DATE_PART('day', TO_TIMESTAMP(DATE_TIME)) AS day,
+ DATE_PART('month', TO_TIMESTAMP(DATE_TIME)) AS month,
+ DATE_PART('hour', TO_TIMESTAMP(DATE_TIME)) AS hour,
+ COUNT(*) AS total_transactions,
+ COUNT_IF(STATE = 'ACCEPTED') AS accepted,
+ COUNT_IF(STATE = 'DECLINED') AS declined,
+ ROUND(
+   100.0 * COUNT_IF(STATE = 'ACCEPTED') / NULLIF(COUNT(*), 0),
+   2
+ ) AS acceptance_rate_pct
+FROM {{ ref('stg_acceptance') }}
+GROUP BY
+ TO_DATE(TO_TIMESTAMP(DATE_TIME)),
+ DATE_PART('day', TO_TIMESTAMP(DATE_TIME)),
+ DATE_PART('month', TO_TIMESTAMP(DATE_TIME)),
+ DATE_PART('hour', TO_TIMESTAMP(DATE_TIME))
+ORDER BY
+ date, hour;
