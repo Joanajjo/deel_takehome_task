@@ -32,15 +32,14 @@ Design a production-style data pipeline using dbt. This includes:
 Deliverable: **Modular dbt models** with documented logic and lineage
 ---
 ## 📁 Data Provided
-- `acceptance.csv` – Credit/debit transaction data  
-- `chargeback.csv` – Chargeback records  
-- `globepay_api.html` – Supporting API documentation
+- `acceptance.csv` 
+- `chargeback.csv`
+- `globepay_api.html` 
 ---
 ## 📂 Repository Contents
 - `models/` – dbt SQL models (source, staging, analytics)
 - `dbt_project.yml` – Project configuration
-- `README.md` – This file
-- `presentation.pdf` – Business report (included separately)
+- `README.md` 
 ---
 ## ✅ Outcome
 The goal is to demonstrate:
