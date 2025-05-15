@@ -1,0 +1,24 @@
+# DBT build artifacts
+dbt_packages/
+target/
+logs/
+# Python virtual environment
+.env/
+.venv/
+env/
+venv/
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+# Jupyter notebooks
+.ipynb_checkpoints/
+# System files
+.DS_Store
+Thumbs.db
+# VS Code settings (optional)
+.vscode/
+# Local environment or secrets
+.env
+.envrc
+*.log
